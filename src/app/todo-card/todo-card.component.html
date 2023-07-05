@@ -1,0 +1,14 @@
+<div class="card">
+    <div *ngIf="!displayEditForm" class="cardData">
+        <h3>Category: {{category}}</h3>
+        <p>Action: {{action}}</p>
+        <button (click)="editCard($event)">Edit</button>
+    </div>
+    <div *ngIf="displayEditForm" class="editForm">
+        <form #editDetailsFormData="ngForm" (ngSubmit)="onUpdatingData(editDetailsFormData.value)">
+            <label for="category">Category: </label><br><input type="text" name="category" [(ngModel)]="category"><br>
+            <label for="action">Action: </label><br><textarea name="action" [(ngModel)]="action"></textarea><br>
+            <button type="submit">Update action</button>
+        </form>
+    </div>
+</div>

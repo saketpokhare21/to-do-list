@@ -1,0 +1,22 @@
+<header class="todo-header">
+  <h1>To-Do List</h1>
+</header>
+
+<div class="filter-container">
+  <form>
+    <label for="filterBox">Search:</label>
+    <input type="text" name="filterBox" [ngModel]="filterValue | lowercase" (ngModelChange)="filterValue=$event">
+  </form>
+</div>
+
+<div class="todo-inp-form">
+  <form #inputForm="ngForm" (ngSubmit)="onActionSubmit(inputForm.value)">
+    <label for="category">Category:</label><br><input type="text" name="category" ngModel><br>
+    <label for="action">Action:</label><br><textarea name="action" ngModel></textarea><br><br>
+    <button type="submit">Create Action</button>
+  </form>
+</div>
+
+<div class="todo-list-container" *ngFor="let list of todoListArr">
+  <app-todo-card [category]="list.category" [action]="list.action" (onEdit)="getDataOnEdit($event)" (onUpdate)="onUpdation($event)"></app-todo-card>
+</div>

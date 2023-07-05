@@ -1,0 +1,22 @@
+.todo-header{
+    text-align: center;
+}
+.todo-inp-form{
+    text-align: center;
+    border: 1px solid black;
+    padding: 1rem;
+}
+label{
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+.todo-list-container{
+    display: flex;
+}
+.filter-container{
+    border: 1px solid black;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
